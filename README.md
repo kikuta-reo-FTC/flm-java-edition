@@ -42,6 +42,9 @@ $ git clone git@github.com:kikuta-reo-FTC/flm-java-edition.git ./flm-java-editio
 - feature  
 新機能開発用のブランチ。  
 (常にdevelopから派生してdevelopにマージを行う。)
+- images  
+README.md用の画像保持ブランチ。
+（マージを一切禁止する・）
 
 ## アーキテクチャの構成
 ここでは本開発で実装対象となるアーキテクチャの構成と概要を記載する。
@@ -59,3 +62,7 @@ build.gradle ⇒ `Gradle` によるビルド設定の定義ファイル
 settings.gradle ⇒ マルチプロジェクトに関するビルド設定の定義ファイル  
 
 ### 各レイヤのREADMEへのリンク
+
+
+下記の内容は画像ブランチの初期コミットの際のテストであり今後削除予定   
+![テスト画像](https://github.com/kikuta-reo-FTC/flm-java-edition/blob/images/sample.png)  
