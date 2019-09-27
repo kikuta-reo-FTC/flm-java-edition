@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtime('mysql:mysql-connector-java')
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	testCompile('org.assertj:assertj-core:3.2.0')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.197'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.21.0'
+}
+
+war {
+        enabled = true
+        archiveName "flm.war"
+}
+
+test {
+    testLogging {
+        // テストの実行結果を出力
+        events 'passed', 'failed', 'skipped'
+        debug {
+            // --debugでの実行時
+            events 'started', 'passed', 'skipped', 'failed'
+            exceptionFormat 'full'
+        }
+    }
+}
